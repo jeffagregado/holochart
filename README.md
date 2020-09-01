@@ -96,4 +96,18 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
+## Plugins / Libraries
+
+1. **react-reveal**
+2. **react-animation**
+3. **styled-components**
+4. **gatsby-plugin-sharp**
+5. **gatsby-transformer-sharp**
+6. **gatsby-plugin-material-ui**
+7. **gatsby-plugin-sass**
+8. **gatsby-plugin-react-helmet**
+9. **gatsby-plugin-web-font-loader**
+10. **gatsby-plugin-playground**
+11. **cross-env**
+
 <!-- AUTO-GENERATED-CONTENT:END -->
