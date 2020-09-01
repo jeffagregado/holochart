@@ -109,5 +109,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 9. **gatsby-plugin-web-font-loader**
 10. **gatsby-plugin-playground**
 11. **cross-env**
+12. **gatsby-source-contentful**
+13. **@contentful/rich-text-react-renderer**
 
 <!-- AUTO-GENERATED-CONTENT:END -->
