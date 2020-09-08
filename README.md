@@ -114,5 +114,6 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 14. **react-scrollspy**
 15. **smooth-scroll**
 16. **tailwind**
+17. **firebase**
 
 <!-- AUTO-GENERATED-CONTENT:END -->
