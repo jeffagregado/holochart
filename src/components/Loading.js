@@ -3,7 +3,7 @@ import "../styles/loading-spinner.scss"
 
 function Loading() {
   return (
-    <div class="lds-default">
+    <div className="lds-default">
       <div></div>
       <div></div>
       <div></div>
