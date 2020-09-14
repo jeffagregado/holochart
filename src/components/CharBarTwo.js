@@ -4,49 +4,12 @@ import axios from "axios"
 
 import Loading from "./Loading"
 
-function ChartBarTwo() {
+function ChartBarTwo(props) {
   const [chartData, setChartData] = useState({})
   const [employees, setEmployees] = useState([])
   const [loading, setLoading] = useState(false)
 
   console.log("employees", employees)
-
-  /*   useEffect(() => {
-    axios
-      .get("http://dummy.restapiexample.com/api/v1/employees")
-      .then(resp => {
-        setEmployees(
-          resp.data.data.sort((a, b) => {
-            return parseInt(b.employee_salary) - parseInt(a.employee_salary)
-          })
-        )
-
-        setChartData({
-          labels: employees.map(empAge => {
-            return parseInt(empAge.employee_age)
-          }),
-          datasets: [
-            {
-              label: "salary",
-              data: employees.map(empSal => {
-                return parseInt(empSal.employee_salary)
-              }),
-              backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-              borderWidth: 4,
-            },
-          ],
-        })
-
-        setLoading(true)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-
-    setLoading(false)
-
-    return () => {}
-  }, []) */
 
   // Chart data with sorting
   useEffect(() => {
@@ -86,13 +49,13 @@ function ChartBarTwo() {
   }, [])
 
   return (
-    <div style={{ height: "1000px", width: "1000px" }}>
+    <div style={{ height: props.height, width: props.width }}>
       {loading ? (
         <HorizontalBar
           data={chartData}
           options={{
             responsive: true,
-            title: { text: "This is a title", display: true },
+            title: { text: props.title, display: true },
             scales: {
               yAxes: [
                 {

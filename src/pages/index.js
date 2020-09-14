@@ -2,14 +2,13 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ChartBarTwo from "../components/CharBarTwo"
+import YoutubeSubCounter from "../components/YouTube/YoutubeSubCounter"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hello World</h1>
     <div>
-      <ChartBarTwo />
+      <YoutubeSubCounter />
     </div>
   </Layout>
 )

@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./fonts";
+@import "~bootstrap/scss/bootstrap";
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +12,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
 }
 
 body {

@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
+import HeaderTransition from "./HeaderTransition"
+import styled from "styled-components"
 
 // smooth-scroll
 // refer to https://www.npmjs.com/package/smooth-scroll
@@ -9,6 +10,15 @@ if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')
 }
+
+const Content = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,9 +33,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+      <HeaderTransition siteTitle={data.site.siteMetadata.title} />
       <div>
-        <main>{children}</main>
+        <Content>{children}</Content>
       </div>
     </>
   )
