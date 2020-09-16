@@ -356,6 +356,7 @@ function YoutubeSubCounter() {
       text: "Hololive Subscriber Chart",
       fontColor: "white",
       fontSize: 18,
+      fontFamily: "Poppins",
     },
     responsive: true,
     maintainAspectRatio: false,
@@ -364,6 +365,7 @@ function YoutubeSubCounter() {
         {
           ticks: {
             fontColor: "white",
+            fontFamily: "Poppins",
             fontSize: 18,
             autoSkip: true,
             beginAtZero: true,
