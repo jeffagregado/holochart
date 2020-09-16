@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 const NavTransition = styled(AppBar)`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
   transition: 500ms;
 `
@@ -14,6 +14,7 @@ const NavTransition = styled(AppBar)`
 const Title = styled(Typography)`
   font-family: "Poppins", sans-serif;
   color: white;
+  display: block;
 `
 
 const useStyles = makeStyles(theme => ({
@@ -22,7 +23,6 @@ const useStyles = makeStyles(theme => ({
     padding: "1rem",
   },
   title: {
-    flexGrow: 1,
     color: "black",
   },
   appBarTransparent: {
