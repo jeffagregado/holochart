@@ -21,7 +21,7 @@ const Content = styled.main`
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  /* const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -29,12 +29,12 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `) */
 
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <HeaderTransition siteTitle={data.site.siteMetadata.title} />
+      <HeaderTransition />
       <div>
         <Content>{children}</Content>
       </div>

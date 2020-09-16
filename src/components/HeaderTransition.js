@@ -2,6 +2,7 @@ import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core"
 import { Link } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
+import HoloLogo from "../images/logo.webp"
 
 const NavTransition = styled(AppBar)`
   display: flex;
@@ -13,16 +14,18 @@ const NavTransition = styled(AppBar)`
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    padding: "1rem",
   },
   title: {
     flexGrow: 1,
     color: "black",
   },
   appBarTransparent: {
-    backgroundColor: "rgba(116, 207, 226, 0.5)",
+    backgroundColor: "rgba(0, 110, 132, 0)",
+    boxShadow: "none",
   },
   appBarSolid: {
-    backgroundColor: "rgba(116, 207, 226)",
+    backgroundColor: "rgb(0, 110, 132)",
   },
 }))
 
@@ -57,7 +60,7 @@ function HeaderTransition(props) {
       <NavTransition position={position} className={classes[navRef.current]}>
         <Toolbar>
           <Link to="/" className={classes.title}>
-            <Typography variant="h6">{props.siteTitle}</Typography>
+            <img src={HoloLogo} alt="Hololive" style={{ width: "13rem" }} />
           </Link>
         </Toolbar>
       </NavTransition>

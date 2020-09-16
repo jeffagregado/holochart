@@ -25,6 +25,27 @@ function YoutubeSubCounter() {
     aqua: "",
     shion: "",
     ayame: "",
+    // --
+    korone: "",
+    okayu: "",
+    mio: "",
+    // --
+    rushia: "",
+    pekora: "",
+    flare: "",
+    noel: "",
+    marine: "",
+    // --
+    coco: "",
+    watame: "",
+    towa: "",
+    kanata: "",
+    luna: "",
+    // --
+    lamy: "",
+    nene: "",
+    botan: "",
+    polka: "",
   })
 
   // sort objects with values/int
@@ -57,6 +78,31 @@ function YoutubeSubCounter() {
       aqua_channel_id,
       shion_channel_id,
       ayame_channel_id,
+
+      // GAMERS
+      korone_channel_id,
+      okayu_channel_id,
+      mio_channel_id,
+
+      // 3rd Gen.
+      rushia_channel_id,
+      pekora_channel_id,
+      flare_channel_id,
+      noel_channel_id,
+      marine_channel_id,
+
+      // 4th Gen.
+      coco_channel_id,
+      watame_channel_id,
+      towa_channel_id,
+      kanata_channel_id,
+      luna_channel_id,
+
+      // 5th Gen.
+      lamy_channel_id,
+      nene_channel_id,
+      botan_channel_id,
+      polka_channel_id,
     } = holoChannel
 
     // 0 Gen.
@@ -107,6 +153,65 @@ function YoutubeSubCounter() {
       `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${ayame_channel_id}&key=${api_key}`
     )
 
+    // GAMERS
+    const koroneAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${korone_channel_id}&key=${api_key}`
+    )
+    const okayuAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${okayu_channel_id}&key=${api_key}`
+    )
+    const mioPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${mio_channel_id}&key=${api_key}`
+    )
+
+    // 3rd Gen.
+    const rushiaAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${rushia_channel_id}&key=${api_key}`
+    )
+    const pekoraAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${pekora_channel_id}&key=${api_key}`
+    )
+    const flareAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${flare_channel_id}&key=${api_key}`
+    )
+    const noelAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${noel_channel_id}&key=${api_key}`
+    )
+    const marineAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${marine_channel_id}&key=${api_key}`
+    )
+
+    // 4th Gen.
+    const cocoAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${coco_channel_id}&key=${api_key}`
+    )
+    const watameAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${watame_channel_id}&key=${api_key}`
+    )
+    const towaAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${towa_channel_id}&key=${api_key}`
+    )
+    const kanataAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${kanata_channel_id}&key=${api_key}`
+    )
+    const lunaPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${luna_channel_id}&key=${api_key}`
+    )
+
+    // 5th Gen.
+    const lamyAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${lamy_channel_id}&key=${api_key}`
+    )
+    const neneAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${nene_channel_id}&key=${api_key}`
+    )
+    const botanAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${botan_channel_id}&key=${api_key}`
+    )
+    const polkaAPI = Axios.get(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${polka_channel_id}&key=${api_key}`
+    )
+
     Promise.all([
       soraAPI,
       robocoAPI,
@@ -124,8 +229,30 @@ function YoutubeSubCounter() {
       aquaAPI,
       shionAPI,
       ayameAPI,
+      // --
+      koroneAPI,
+      okayuAPI,
+      mioPI,
+      // --
+      rushiaAPI,
+      pekoraAPI,
+      flareAPI,
+      noelAPI,
+      marineAPI,
+      // --
+      cocoAPI,
+      watameAPI,
+      towaAPI,
+      kanataAPI,
+      lunaPI,
+      // --
+      lamyAPI,
+      neneAPI,
+      botanAPI,
+      polkaAPI,
     ])
       .then(res => {
+        console.log("res", res[0])
         setSubCount({
           sora: parseInt(res[0].data.items[0].statistics.subscriberCount),
           roboco: parseInt(res[1].data.items[0].statistics.subscriberCount),
@@ -143,6 +270,27 @@ function YoutubeSubCounter() {
           aqua: parseInt(res[11].data.items[0].statistics.subscriberCount),
           shion: parseInt(res[12].data.items[0].statistics.subscriberCount),
           ayame: parseInt(res[13].data.items[0].statistics.subscriberCount),
+          // --
+          korone: parseInt(res[14].data.items[0].statistics.subscriberCount),
+          okayu: parseInt(res[15].data.items[0].statistics.subscriberCount),
+          mio: parseInt(res[16].data.items[0].statistics.subscriberCount),
+          // --
+          rushia: parseInt(res[17].data.items[0].statistics.subscriberCount),
+          pekora: parseInt(res[18].data.items[0].statistics.subscriberCount),
+          flare: parseInt(res[19].data.items[0].statistics.subscriberCount),
+          noel: parseInt(res[20].data.items[0].statistics.subscriberCount),
+          marine: parseInt(res[21].data.items[0].statistics.subscriberCount),
+          // --
+          coco: parseInt(res[22].data.items[0].statistics.subscriberCount),
+          watame: parseInt(res[23].data.items[0].statistics.subscriberCount),
+          towa: parseInt(res[24].data.items[0].statistics.subscriberCount),
+          kanata: parseInt(res[25].data.items[0].statistics.subscriberCount),
+          luna: parseInt(res[26].data.items[0].statistics.subscriberCount),
+          // --
+          lamy: parseInt(res[27].data.items[0].statistics.subscriberCount),
+          nene: parseInt(res[28].data.items[0].statistics.subscriberCount),
+          botan: parseInt(res[29].data.items[0].statistics.subscriberCount),
+          polka: parseInt(res[30].data.items[0].statistics.subscriberCount),
         })
         setLoading(true)
       })
@@ -160,6 +308,39 @@ function YoutubeSubCounter() {
       {
         label: "Subscriber",
         data: Object.keys(sortSubs).map(key => sortSubs[key]),
+        backgroundColor: [
+          "rgba(255, 0, 0, 0.5)",
+          "rgba(253, 0, 0, 0.5)",
+          "rgba(251, 0, 0, 0.5)",
+          "rgba(250, 0, 0, 0.5)",
+          "rgba(245, 0, 0, 0.5)",
+          "rgba(240, 0, 0, 0.5)",
+          "rgba(235, 0, 0, 0.5)",
+          "rgba(230, 0, 0, 0.5)",
+          "rgba(220, 0, 0, 0.5)",
+          "rgba(210, 0, 0, 0.5)",
+          "rgba(200, 0, 0, 0.5)",
+          "rgba(190, 0, 0, 0.5)",
+          "rgba(180, 0, 0, 0.5)",
+          "rgba(170, 0, 0, 0.5)",
+          "rgba(160, 0, 0, 0.5)",
+          "rgba(150, 0, 0, 0.5)",
+          "rgba(140, 0, 0, 0.5)",
+          "rgba(130, 0, 0, 0.5)",
+          "rgba(120, 0, 0, 0.5)",
+          "rgba(110, 0, 0, 0.5)",
+          "rgba(100, 0, 0, 0.5)",
+          "rgba(90, 0, 0, 0.5)",
+          "rgba(80, 0, 0, 0.5)",
+          "rgba(70, 0, 0, 0.5)",
+          "rgba(60, 0, 0, 0.5)",
+          "rgba(50, 0, 0, 0.5)",
+          "rgba(40, 0, 0, 0.5)",
+          "rgba(30, 0, 0, 0.5)",
+          "rgba(20, 0, 0, 0.5)",
+          "rgba(10, 0, 0, 0.5)",
+          "rgba(0, 0, 0, 0.5)",
+        ],
       },
     ],
   }
@@ -169,6 +350,8 @@ function YoutubeSubCounter() {
       display: true,
       text: "Hololive Subscriber Chart",
     },
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
@@ -194,12 +377,13 @@ function YoutubeSubCounter() {
       ],
     },
   }
+
   return (
     <>
       <div
         style={{
           width: "1000px",
-          minHeight: "90vh",
+          minHeight: "80vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
