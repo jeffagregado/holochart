@@ -5,6 +5,7 @@ import holoChannel from "./holoChannel"
 import Axios from "axios"
 import { HorizontalBar } from "react-chartjs-2"
 import Loading from "../Loading"
+import "chartjs-plugin-datalabels"
 
 function YoutubeSubCounter() {
   const [loading, setLoading] = useState(false)
@@ -346,6 +347,19 @@ function YoutubeSubCounter() {
   }
 
   const option = {
+    plugins: {
+      datalabels: {
+        display: true,
+        color: "white",
+        align: "end",
+        anchor: "end",
+      },
+    },
+    layout: {
+      padding: {
+        right: 20,
+      },
+    },
     legend: {
       labels: {
         fontColor: "white",
@@ -360,6 +374,9 @@ function YoutubeSubCounter() {
     },
     responsive: true,
     maintainAspectRatio: false,
+    hover: {
+      animationDuration: 0,
+    },
     scales: {
       yAxes: [
         {
@@ -374,6 +391,8 @@ function YoutubeSubCounter() {
           gridLines: {
             display: false,
           },
+          categoryPercentage: 0.5,
+          barPercentage: 1,
         },
       ],
       xAxes: [
@@ -394,7 +413,7 @@ function YoutubeSubCounter() {
       <div
         style={{
           width: "1000px",
-          minHeight: "80vh",
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
