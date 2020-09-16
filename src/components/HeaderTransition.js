@@ -9,10 +9,11 @@ const NavTransition = styled(AppBar)`
   justify-content: space-between;
   margin-bottom: 1rem;
   transition: 500ms;
+`
 
-  &&.appBarSolid title {
-    color: white;
-  }
+const Title = styled(Typography)`
+  font-family: "Poppins", sans-serif;
+  color: white;
 `
 
 const useStyles = makeStyles(theme => ({
@@ -25,11 +26,11 @@ const useStyles = makeStyles(theme => ({
     color: "black",
   },
   appBarTransparent: {
-    backgroundColor: "rgba(0, 110, 132, 0)",
+    backgroundColor: "rgba(119, 119, 119, 0)",
     boxShadow: "none",
   },
   appBarSolid: {
-    backgroundColor: "rgb(0, 110, 132)",
+    backgroundColor: "rgb(119, 119, 119)",
     transition: "2s",
   },
 }))
@@ -66,7 +67,7 @@ function HeaderTransition(props) {
         <Toolbar>
           <Link to="/" className={classes.title}>
             {/* <img src={HoloLogo} alt="Hololive" style={{ width: "13rem" }} /> */}
-            <Typography>Unofficial Hololive Charts</Typography>
+            <Title>Unofficial Hololive Charts</Title>
           </Link>
         </Toolbar>
       </NavTransition>

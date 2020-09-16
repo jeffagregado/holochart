@@ -346,9 +346,16 @@ function YoutubeSubCounter() {
   }
 
   const option = {
+    legend: {
+      labels: {
+        fontColor: "white",
+      },
+    },
     title: {
       display: true,
       text: "Hololive Subscriber Chart",
+      fontColor: "white",
+      fontSize: 18,
     },
     responsive: true,
     maintainAspectRatio: false,
@@ -356,6 +363,8 @@ function YoutubeSubCounter() {
       yAxes: [
         {
           ticks: {
+            fontColor: "white",
+            fontSize: 18,
             autoSkip: true,
             beginAtZero: true,
             stepSize: 1,
