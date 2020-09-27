@@ -1,5 +1,5 @@
 const config = {
-  api_key: "AIzaSyA1WqBdNKJBnQIlXo3VDLEFTJDy1zmB-OU",
+  api_key: process.env.GOOGLE_APPLICATION_CREDENTIALS,
 }
 
 export default config
